@@ -20,6 +20,9 @@ gem 'grape_on_rails_routes'
 gem 'active_admin_flat_skin'
 gem 'activeadmin'
 
+gem 'grape-swagger-entity'
+gem 'grape-swagger-rails'
+
 gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
