@@ -309,7 +309,6 @@ DEPENDENCIES
   factory_bot_rails (~> 5.1, >= 5.1.1)
   grape
   grape-entity
-  grape-swagger
   grape-swagger-entity
   grape-swagger-rails
   grape_on_rails_routes

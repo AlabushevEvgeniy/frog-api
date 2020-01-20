@@ -11,7 +11,9 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
 gem 'devise'
+# gem 'devise-jwt', '~> 0.5.9'
 # Grape API
+
 gem 'doorkeeper', '~> 4.2.6'
 gem 'grape'
 gem 'grape-entity'
