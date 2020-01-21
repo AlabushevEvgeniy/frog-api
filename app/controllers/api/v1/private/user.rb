@@ -5,7 +5,6 @@ module API
         desc 'Return current user' do
           success model: API::V1::Entities::UserV1
         end
-
         get '/me' do
           present current_resource_owner, with: API::V1::Entities::UserV1
         end
@@ -16,6 +15,17 @@ module API
         get '/' do
           users = ::User.all
           present users, with: API::V1::Entities::UserV1
+        end
+
+        desc 'Get user by :id' do
+          success model: API::V1::Entities::UserV1
+        end
+        params do
+          requires :id, type: Integer
+        end
+        get '/:id' do
+          user = ::User.find(permitted_params[:id])
+          present user, with: API::V1::Entities::UserV1
         end
 
         desc 'Update current user' do

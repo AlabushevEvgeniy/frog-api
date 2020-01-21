@@ -10,8 +10,8 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "sprockets/railtie"
-require "rails/test_unit/railtie"
+require "sprockets/railtie"
+# require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,6 +24,15 @@ module TestApi
 
     config.paths.add 'app/api', glob: '**/*.rb'
     config.eager_load_paths << "#{config.root}/app"
+
+    # config.middleware.use ActionDispatch::Flash
+    # config.middleware.use Rack::MethodOverride
+    # config.middleware.use ActionDispatch::Cookies
+
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use Rack::MethodOverride
+    config.middleware.use ActionDispatch::Flash
 
     # config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     # config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]

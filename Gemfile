@@ -4,7 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2.1'
+# gem 'rails', '~> 6.0.2.1'
+gem 'rails', '~> 5.2.3'
 
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -21,11 +22,12 @@ gem 'grape_on_rails_routes'
 
 gem 'active_admin_flat_skin'
 gem 'activeadmin'
+# gem 'draper'
+# gem 'formtastic'
 
 gem 'grape-swagger-entity'
 gem 'grape-swagger-rails'
 
-gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -49,6 +51,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers', '~> 4.1.2'
 end
