@@ -124,7 +124,7 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -325,16 +325,16 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
-  module ActiveAdmin
-  module Views
-    module Pages
-      class Base < Arbre::HTML::Document
-        def build_footer
-           # whatever
-           insert_tag view_factory.footer
-        end
-      end
-    end
-  end
-end
+#   module ActiveAdmin
+#   module Views
+#     module Pages
+#       class Base < Arbre::HTML::Document
+#         def build_footer
+#            # whatever
+#            insert_tag view_factory.footer
+#         end
+#       end
+#     end
+#   end
+# end
 end

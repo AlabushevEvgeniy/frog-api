@@ -22,8 +22,8 @@ gem 'grape_on_rails_routes'
 
 gem 'active_admin_flat_skin'
 gem 'activeadmin'
-# gem 'draper'
-# gem 'formtastic'
+
+gem 'carrierwave', '~> 2.0'
 
 gem 'grape-swagger-entity'
 gem 'grape-swagger-rails'
