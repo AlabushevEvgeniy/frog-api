@@ -23,10 +23,13 @@ ActiveAdmin.register User do
   end
 
   form do |f|
-    f.semantic_errors
+    f.semantic_errors(*f.object.errors.keys)
+
     f.inputs do
       f.input :name
       f.input :email
+      f.input :password
+      f.input :password_confirmation
       unless f.object.avatar.url.nil?
         f.input :avatar, as: :file, hint: image_tag(f.object.avatar.url)
       else
@@ -39,4 +42,12 @@ ActiveAdmin.register User do
     f.actions
   end
 
+  controller do
+    def update
+      if params[:user][:password].blank?
+        %w(password password_confirmation).each { |p| params[:user].delete(p) }
+      end
+      super
+    end
+  end
 end
