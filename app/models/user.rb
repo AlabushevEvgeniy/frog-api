@@ -7,10 +7,9 @@ class User < ApplicationRecord
   attribute :remove_image
 
   validates :name, :email, presence: true, uniqueness: true
+  validates :avatar, presence: true
 
   before_validation :assign_avatar
-
-  validate :avatar_present
 
   mount_uploader :avatar, AvatarUploader
 
@@ -18,9 +17,5 @@ class User < ApplicationRecord
 
   def assign_avatar
     assign_attributes(avatar: '') if remove_image.to_boolean
-  end
-
-  def avatar_present
-    errors.add(:user, "Avatar can't be blank") if avatar.file.nil?
   end
 end
