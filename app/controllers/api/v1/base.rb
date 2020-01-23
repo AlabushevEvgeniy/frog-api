@@ -1,4 +1,3 @@
-require 'grape-swagger'
 require 'doorkeeper/grape/helpers'
 
 module API
@@ -9,7 +8,6 @@ module API
 
       helpers Doorkeeper::Grape::Helpers
 
-      # format :json
       namespace do
         before {doorkeeper_authorize!}
 
@@ -19,13 +17,6 @@ module API
       namespace do
         mount API::V1::Public::Registration => 'registrations'
       end
-
-      add_swagger_documentation(
-        api_version: 'v1',
-        base_path: '/api/v1',
-        hide_documentation_path: true,
-        hide_format: true
-      )
     end
   end
 end

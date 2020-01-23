@@ -7,7 +7,6 @@ class User < ApplicationRecord
   attribute :remove_image
 
   validates :name, :email, presence: true, uniqueness: true
-  validates :avatar, presence: true
 
   before_validation :assign_avatar
 
