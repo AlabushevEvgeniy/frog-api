@@ -12,7 +12,7 @@ gem 'puma', '~> 3.11'
 gem 'devise'
 
 # Grape API
-gem 'doorkeeper', '~> 4.2.6'
+gem 'doorkeeper', '~> 4.4.0'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape_on_rails_routes'
